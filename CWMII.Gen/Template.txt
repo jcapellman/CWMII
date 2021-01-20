@@ -1,0 +1,9 @@
+﻿namespace CWMII.lib.Enums {
+	public enum {TABLE} {
+		{PROPERTIES}
+	}
+
+	public static class {TABLE}Extension {
+		public static string GetWMIValue(this {TABLE} enumOption) => lib.CWMII.GetSingleProperty($"SELECT * FROM {TABLE}", enumOption.ToString());
+	}
+}
