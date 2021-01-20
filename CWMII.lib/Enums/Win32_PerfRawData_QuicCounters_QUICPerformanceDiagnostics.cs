@@ -1,0 +1,50 @@
+namespace CWMII.lib.Enums {
+	public enum Win32_PerfRawData_QuicCounters_QUICPerformanceDiagnostics {
+		Caption,
+		Description,
+		Name,
+		Frequency_Object,
+		Frequency_PerfTime,
+		Frequency_Sys100NS,
+		Timestamp_Object,
+		Timestamp_PerfTime,
+		Timestamp_Sys100NS,
+		QUICAppReceivedBytesPersec,
+		QUICAppSentBytesPersec,
+		QUICConnectionOperationsCompletedPersec,
+		QUICConnectionOperationsQueued,
+		QUICConnectionOperationsQueuedPersec,
+		QUICConnectionsActive,
+		QUICConnectionsConnected,
+		QUICConnectionsCreated,
+		QUICConnectionsCreatedPersec,
+		QUICConnectionsNoALPN,
+		QUICConnectionsNoALPNsPersec,
+		QUICConnectionsProtocolError,
+		QUICConnectionsProtocolErrorsPersec,
+		QUICConnectionsQueued,
+		QUICConnectionsRejected,
+		QUICConnectionsRejectedPersec,
+		QUICConnectionsResumed,
+		QUICConnectionsResumedPersec,
+		QUICHandshakesFailed,
+		QUICHandshakesFailedPersec,
+		QUICPacketDecryptionFailuresPersec,
+		QUICPacketsDroppedPersec,
+		QUICPacketsSuspectedLostPersec,
+		QUICStreamsActive,
+		QUICUDPDatagramsReceivedPersec,
+		QUICUDPDatagramsSentPersec,
+		QUICUDPPayloadBytesReceivedPersec,
+		QUICUDPPayloadBytesSentPersec,
+		QUICUDPReceiveEventsPersec,
+		QUICUDPSendCallsPersec,
+		QUICWorkerOperationsPersec,
+		QUICWorkerOperationsQueued,
+		QUICWorkerOperationsQueuedPersec
+	}
+
+	public static class Win32_PerfRawData_QuicCounters_QUICPerformanceDiagnosticsExtension {
+		public static string GetWMIValue(this Win32_PerfRawData_QuicCounters_QUICPerformanceDiagnostics enumOption) => lib.CWMII.GetSingleProperty($"SELECT * FROM Win32_PerfRawData_QuicCounters_QUICPerformanceDiagnostics", enumOption.ToString());
+	}
+}

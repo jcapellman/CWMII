@@ -1,0 +1,50 @@
+namespace CWMII.lib.Enums {
+	public enum Win32_PerfRawData_Tcpip_ICMPv6 {
+		Caption,
+		Description,
+		Name,
+		Frequency_Object,
+		Frequency_PerfTime,
+		Frequency_Sys100NS,
+		Timestamp_Object,
+		Timestamp_PerfTime,
+		Timestamp_Sys100NS,
+		MessagesOutboundErrors,
+		MessagesPersec,
+		MessagesReceivedErrors,
+		MessagesReceivedPersec,
+		MessagesSentPersec,
+		ReceivedDestUnreachable,
+		ReceivedEchoPersec,
+		ReceivedEchoReplyPersec,
+		ReceivedMembershipQuery,
+		ReceivedMembershipReduction,
+		ReceivedMembershipReport,
+		ReceivedNeighborAdvert,
+		ReceivedNeighborSolicit,
+		ReceivedPacketTooBig,
+		ReceivedParameterProblem,
+		ReceivedRedirectPersec,
+		ReceivedRouterAdvert,
+		ReceivedRouterSolicit,
+		ReceivedTimeExceeded,
+		SentDestinationUnreachable,
+		SentEchoPersec,
+		SentEchoReplyPersec,
+		SentMembershipQuery,
+		SentMembershipReduction,
+		SentMembershipReport,
+		SentNeighborAdvert,
+		SentNeighborSolicit,
+		SentPacketTooBig,
+		SentParameterProblem,
+		SentRedirectPersec,
+		SentRouterAdvert,
+		SentRouterSolicit,
+		SentTimeExceeded
+	}
+
+	public static class Win32_PerfRawData_Tcpip_ICMPv6Extension {
+		public static string GetWMIValue(this Win32_PerfRawData_Tcpip_ICMPv6 enumOption) => lib.CWMII.GetSingleProperty($"SELECT * FROM Win32_PerfRawData_Tcpip_ICMPv6", enumOption.ToString());
+	}
+}

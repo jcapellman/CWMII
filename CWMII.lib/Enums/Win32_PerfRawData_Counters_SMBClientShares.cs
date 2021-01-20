@@ -1,0 +1,50 @@
+namespace CWMII.lib.Enums {
+	public enum Win32_PerfRawData_Counters_SMBClientShares {
+		Caption,
+		Description,
+		Name,
+		Frequency_Object,
+		Frequency_PerfTime,
+		Frequency_Sys100NS,
+		Timestamp_Object,
+		Timestamp_PerfTime,
+		Timestamp_Sys100NS,
+		AvgBytesPerRead,
+		AvgBytesPerRead_Base,
+		AvgBytesPerWrite,
+		AvgBytesPerWrite_Base,
+		AvgDataBytesPerRequest,
+		AvgDataBytesPerRequest_Base,
+		AvgDataQueueLength,
+		AvgReadQueueLength,
+		AvgsecPerDataRequest,
+		AvgsecPerDataRequest_Base,
+		AvgsecPerRead,
+		AvgsecPerRead_Base,
+		AvgsecPerWrite,
+		AvgsecPerWrite_Base,
+		AvgWriteQueueLength,
+		CompressedBytesSentPersec,
+		CompressedRequestsPersec,
+		CompressedResponsesPersec,
+		CreditStallsPersec,
+		CurrentDataQueueLength,
+		DataBytesPersec,
+		DataRequestsPersec,
+		MetadataRequestsPersec,
+		ReadBytesPersec,
+		ReadBytestransmittedviaSMBDirectPersec,
+		ReadRequestsPersec,
+		ReadRequeststransmittedviaSMBDirectPersec,
+		TurboIOReadsPersec,
+		TurboIOWritesPersec,
+		WriteBytesPersec,
+		WriteBytestransmittedviaSMBDirectPersec,
+		WriteRequestsPersec,
+		WriteRequeststransmittedviaSMBDirectPersec
+	}
+
+	public static class Win32_PerfRawData_Counters_SMBClientSharesExtension {
+		public static string GetWMIValue(this Win32_PerfRawData_Counters_SMBClientShares enumOption) => lib.CWMII.GetSingleProperty($"SELECT * FROM Win32_PerfRawData_Counters_SMBClientShares", enumOption.ToString());
+	}
+}

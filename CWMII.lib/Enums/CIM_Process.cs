@@ -1,0 +1,53 @@
+namespace CWMII.lib.Enums {
+	public enum CIM_Process {
+		Caption,
+		Description,
+		InstallDate,
+		Name,
+		Status,
+		CreationClassName,
+		CreationDate,
+		CSCreationClassName,
+		CSName,
+		ExecutionState,
+		Handle,
+		KernelModeTime,
+		OSCreationClassName,
+		OSName,
+		Priority,
+		TerminationDate,
+		UserModeTime,
+		WorkingSetSize,
+		CommandLine,
+		ExecutablePath,
+		HandleCount,
+		MaximumWorkingSetSize,
+		MinimumWorkingSetSize,
+		OtherOperationCount,
+		OtherTransferCount,
+		PageFaults,
+		PageFileUsage,
+		ParentProcessId,
+		PeakPageFileUsage,
+		PeakVirtualSize,
+		PeakWorkingSetSize,
+		PrivatePageCount,
+		ProcessId,
+		QuotaNonPagedPoolUsage,
+		QuotaPagedPoolUsage,
+		QuotaPeakNonPagedPoolUsage,
+		QuotaPeakPagedPoolUsage,
+		ReadOperationCount,
+		ReadTransferCount,
+		SessionId,
+		ThreadCount,
+		VirtualSize,
+		WindowsVersion,
+		WriteOperationCount,
+		WriteTransferCount
+	}
+
+	public static class CIM_ProcessExtension {
+		public static string GetWMIValue(this CIM_Process enumOption) => lib.CWMII.GetSingleProperty($"SELECT * FROM CIM_Process", enumOption.ToString());
+	}
+}

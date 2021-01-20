@@ -1,0 +1,52 @@
+namespace CWMII.lib.Enums {
+	public enum Win32_Volume {
+		Caption,
+		Description,
+		InstallDate,
+		Name,
+		Status,
+		Availability,
+		ConfigManagerErrorCode,
+		ConfigManagerUserConfig,
+		CreationClassName,
+		DeviceID,
+		ErrorCleared,
+		ErrorDescription,
+		LastErrorCode,
+		PNPDeviceID,
+		PowerManagementCapabilities,
+		PowerManagementSupported,
+		StatusInfo,
+		SystemCreationClassName,
+		SystemName,
+		Access,
+		BlockSize,
+		ErrorMethodology,
+		NumberOfBlocks,
+		Purpose,
+		Automount,
+		BootVolume,
+		Capacity,
+		Compressed,
+		DirtyBitSet,
+		DriveLetter,
+		DriveType,
+		FileSystem,
+		FreeSpace,
+		IndexingEnabled,
+		Label,
+		MaximumFileNameLength,
+		PageFilePresent,
+		QuotasEnabled,
+		QuotasIncomplete,
+		QuotasRebuilding,
+		SerialNumber,
+		SupportsDiskQuotas,
+		SupportsFileBasedCompression,
+		SystemVolume
+	}
+
+	public static class Win32_VolumeExtension {
+		public static string GetWMIValue(this Win32_Volume enumOption) => lib.CWMII.GetSingleProperty($"SELECT * FROM Win32_Volume", enumOption.ToString());
+	}
+}
