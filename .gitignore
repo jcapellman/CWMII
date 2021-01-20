@@ -1,0 +1,10 @@
+.vs/
+bin/
+obj/
+*.lock.json
+packages/
+/Release/*
+/*/Release/*
+Debug/*
+/*/Debug/*
+*.user
