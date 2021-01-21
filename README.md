@@ -4,7 +4,8 @@ Clean WMI Interface (CWMII) written in C# providing a strongly typed interface t
 
 A common method of accessing WMI objects is to utilize System.Management, however this creates block of code like so:
 ```
-ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BIOS"); 
+ManagementObjectSearcher searcher = 
+    new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BIOS"); 
 
 foreach (ManagementObject queryObj in searcher.Get())
 {
