@@ -23,7 +23,10 @@ jobs:
       run: dotnet build CWMII.lib --configuration Release
     - name: Pack sie package
       run: dotnet pack --configuration Release CWMII.lib
-    - name: Test sie Code
-      run: dotnet test --no-build --verbosity normal
     - name: Publish sie package
       run: dotnet nuget push CWMII.lib/bin/Release/*.nupkg
+    - name: Build sie Test project
+      run: dotnet build CWMII.UnitTests
+    - name: Test sie Code
+      run: dotnet test --no-build --verbosity normal
+
