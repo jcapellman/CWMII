@@ -2,6 +2,8 @@
 
 Clean WMI Interface (CWMII) written in C# providing a strongly typed interface to access WMI Properties and Classes
 
+NuGet: https://www.nuget.org/packages/CWMII/
+
 A common method of accessing WMI objects is to utilize System.Management, however this creates block of code like so:
 ```
 ManagementObjectSearcher searcher = 
