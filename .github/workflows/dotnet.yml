@@ -1,4 +1,4 @@
-name: .NET
+name: Build und Test und Publish
 
 on:
   push:
@@ -13,13 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET
+    - name: Setup sie .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies
+    - name: Restore sie dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
+    - name: Build sie package
+      run: dotnet build CWMII.lib --configuration Release
+    - name: Pack sie package
+      run: dotnet pack --configuration Release CWMII.lib
+    - name: Test sie Code
       run: dotnet test --no-build --verbosity normal
+    - name: Publish sie package
+      run: dotnet nuget push CWMII.lib/bin/Release/*.nupkg
