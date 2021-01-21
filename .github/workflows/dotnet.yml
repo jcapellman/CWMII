@@ -24,7 +24,7 @@ jobs:
     - name: Pack sie package
       run: dotnet pack --configuration Release CWMII.lib
     - name: Publish sie package
-      run: dotnet nuget push CWMII.lib/bin/Release/*.nupkg
+      run: dotnet nuget push CWMII.lib/bin/Release/*.nupkg -source "github"
     - name: Build sie Test project
       run: dotnet build CWMII.UnitTests
     - name: Test sie Code
