@@ -23,10 +23,13 @@ jobs:
       run: dotnet build CWMII.lib --configuration Release
     - name: Pack sie package
       run: dotnet pack --configuration Release CWMII.lib
-    - name: Publish sie package
-      run: dotnet nuget push CWMII.lib/bin/Release/*.nupkg -s "github"
     - name: Build sie Test project
       run: dotnet build CWMII.UnitTests
     - name: Test sie Code
       run: dotnet test --no-build --verbosity normal
+    - name: Publish  
+      uses: brandedoutcast/publish-nuget@v2.5.2  
+      with:   
+        PROJECT_FILE_PATH: CWMII.lib/CWMII.lib.csproj  
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
 
