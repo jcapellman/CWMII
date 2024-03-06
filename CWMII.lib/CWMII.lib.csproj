@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>Jarred Capellman</Authors>
     <Company>Jarred capellman</Company>
     <Product>CWMII</Product>
@@ -13,11 +13,11 @@
     <PackageProjectUrl>https://github.com/jcapellman/CWMII</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jcapellman/CWMII</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Copyright>2021 Jarred Capellman</Copyright>
+    <Copyright>2021-2024 Jarred Capellman</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Management.Infrastructure" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Management.Infrastructure" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
